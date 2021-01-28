@@ -17,8 +17,8 @@
 const f = (str) => {
     const counts = str.split('')
         .reduce((partialCounts, c) => ({
-                ...partialCounts,
-                [c]: (partialCounts[c] || 0) + 1
+            ...partialCounts,
+            [c]: (partialCounts[c] || 0) + 1
         }), {});
     return Object.keys(counts).reduce((partialResult, c) =>
         `${partialResult}${c}${counts[c]}`, '');
