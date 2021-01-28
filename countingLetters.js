@@ -1,8 +1,8 @@
 /***
  * Problem Statement:
- * Given a string, write a function that returns a string
- * that contains each unique character once, followed by
- * its integer number of occurrences ("count").
+ * Given a string, write a function that returns a string containing
+ * each of the original string's unique characters once, followed by
+ * that character's integer number of occurrences in the original string.
 **/
 
 // Here's my solution in JavaScript:
@@ -16,15 +16,15 @@
  */
 const f = (str) => {
     const counts = str.split('')
-        .reduce((partialCounts, c) =>
-            ({
+        .reduce((partialCounts, c) => ({
                 ...partialCounts,
                 [c]: (partialCounts[c] || 0) + 1
-            })
-        , {});
+        }), {});
     return Object.keys(counts).reduce((partialResult, c) =>
         `${partialResult}${c}${counts[c]}`, '');
 };
+
+// Tests:
 
 const test1 = "hello world"; // Answer: "h1e1l3o2 1w1r1d1"
 const test2 = "seashell"; // Answer: "s2e2a1h1l2"
